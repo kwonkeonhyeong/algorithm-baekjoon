@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        String[] number = br.readLine().split(" ");
+        int number = Integer.parseInt(br.readLine());
         String[] numbers = br.readLine().split(" ");
 
         int max = -1000000;
@@ -16,12 +16,8 @@ public class Main {
 
         for (String s : numbers) {
             int targetNumber = Integer.parseInt(s);
-            if (targetNumber >= max) {
-                max = targetNumber;
-            }
-            if (targetNumber <= min) {
-                min = targetNumber;
-            }
+                max = Math.max(max,targetNumber);
+                min = Math.min(min,targetNumber);
         }
 
         System.out.println(min + " " + max);
